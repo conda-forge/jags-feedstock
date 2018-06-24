@@ -17,12 +17,13 @@ build:
 
 requirements:
   build:
-    - toolchain
-    - gcc
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - lapack
   run:
     - lapack
-    - libgcc
 
 test:
   commands:
