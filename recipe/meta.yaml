@@ -22,8 +22,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - libblas
-    - libcblas
-  run:
+    - liblapack
 
 test:
   commands:
