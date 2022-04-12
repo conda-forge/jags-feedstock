@@ -3,15 +3,15 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '10'
+- '12'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '10'
+- '12'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
@@ -19,7 +19,7 @@ fortran_compiler_version:
 libblas:
 - 3.8 *netlib
 liblapack:
-- 3.8.0 *netlib
+- 3.8 *netlib
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
