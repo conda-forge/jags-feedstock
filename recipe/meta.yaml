@@ -1,6 +1,6 @@
 {% set name = "JAGS" %}
-{% set version = "4.3.0" %}
-{% set sha256 = "8ac5dd57982bfd7d5f0ee384499d62f3e0bb35b5f1660feb368545f1186371fc" %}
+{% set version = "4.3.2" %}
+{% set sha256 = "871f556af403a7c2ce6a0f02f15cf85a572763e093d26658ebac55c4ab472fc8" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1004
+  number: 0
   skip: true  # [win]
 
 requirements:
