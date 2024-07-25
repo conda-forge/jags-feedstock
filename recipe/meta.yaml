@@ -20,6 +20,7 @@ requirements:
     - gnuconfig  # [unix]
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - make
   host:
