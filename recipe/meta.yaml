@@ -1,6 +1,5 @@
 {% set name = "JAGS" %}
 {% set version = "5.0.0" %}
-{% set sha256 = "64fcd4883b8a8ee907722f49366cc9f277477a0647ada61356f17568f84ffff8" %}
 
 package:
   name: {{ name|lower }}
@@ -8,8 +7,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://sourceforge.net/projects/mcmc-jags/files/JAGS/{{ version[0] }}.x/Source/{{ name }}-{{ version }}.tar.gz/
-  sha256: {{ sha256 }}
+  url: https://sourceforge.net/projects/mcmc-jags/files/{{ name }}/{{ version[0] }}.x/Source/{{ name }}-{{ version }}.tar.gz/
+  sha256: 64fcd4883b8a8ee907722f49366cc9f277477a0647ada61356f17568f84ffff8
 
 build:
   number: 0
@@ -27,6 +26,8 @@ requirements:
   host:
     - libblas
     - liblapack
+    - libgomp      # [not osx]
+    - llvm-openmp  # [osx]
 
 test:
   commands:
