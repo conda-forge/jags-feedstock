@@ -23,6 +23,7 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - make
+    - pkg-config
   host:
     - libblas
     - liblapack
