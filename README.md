@@ -184,6 +184,3 @@ Feedstock Maintainers
 * [@mfansler](https://github.com/mfansler/)
 * [@micknudsen](https://github.com/micknudsen/)
 
-
-<!-- dummy commit to enable rerendering -->
-
