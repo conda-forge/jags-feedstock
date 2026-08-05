@@ -13,6 +13,9 @@ source:
 
 build:
   number: 0
+  ## begin debug
+  skip: true  # [not win]
+  ## end debug
 
 requirements:
   build:
