@@ -1,5 +1,6 @@
 {% set name = "JAGS" %}
 {% set version = "5.0.0" %}
+{% set posix = 'm2-' if win else '' %}
 
 package:
   name: {{ name|lower }}
@@ -12,17 +13,28 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  ## begin debug
+  skip: true  # [not win]
+  ## end debug
 
 requirements:
   build:
     - gnuconfig  # [unix]
-    - {{ compiler('fortran') }}
-    - {{ compiler('c') }}
-    - {{ stdlib('c') }}
-    - {{ compiler('cxx') }}
-    - make
+    - {{ compiler('c') }}              # [not win]
+    - {{ stdlib('c') }}                # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib('m2w64_c') }}          # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('fortran') }}        # [not win]
+    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ posix }}filesystem            # [win]
+    - {{ posix }}sed                   # [win]
+    - {{ posix }}grep                  # [win]
     - pkg-config
+    - {{ posix }}make
+    - {{ posix }}coreutils             # [win]
+    - {{ posix }}zip                   # [win]
   host:
     - libblas
     - liblapack
