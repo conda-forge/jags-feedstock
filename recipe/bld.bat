@@ -1,5 +1,8 @@
 @echo on
+setlocal
 
-./configure --prefix=%PREFIX% --build=x86_64-w64-mingw32.static.posix
-make
-make install
+REM Delegate to the POSIX shell script
+bash %RECIPE_DIR%/build_win.sh
+IF %ERRORLEVEL% NEQ 0 exit 1
+
+endlocal
