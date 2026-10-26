@@ -1,5 +1,5 @@
 {% set name = "JAGS" %}
-{% set version = "5.0.0" %}
+{% set version = "5.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://sourceforge.net/projects/mcmc-jags/files/{{ name }}/{{ version[0] }}.x/Source/{{ name }}-{{ version }}.tar.gz/
-  sha256: 64fcd4883b8a8ee907722f49366cc9f277477a0647ada61356f17568f84ffff8
+  sha256: 0888571b1812c8ce076ad6326c66f96a0ae7762497c346cd7eb32d35a62105d4
 
 build:
   number: 0
